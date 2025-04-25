@@ -200,8 +200,6 @@ function CourseLogger({
                 <option value="Uncategorized">Uncategorized</option>
                 <option value="Simplilearn">Simplilearn</option>
                 <option value="LinkedIn">LinkedIn</option>
-                <option value="Coursera">Coursera</option>
-                <option value="Udemy">Udemy</option>
                 <option value="Custom">Custom...</option>
               </select>
 
