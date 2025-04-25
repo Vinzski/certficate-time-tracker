@@ -1,44 +1,59 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import CourseItem from "./CourseItem"
-import BulkImport from "./BulkImport"
-import { parseTimeInput, formatTime, convertToHours } from "../utils/timeUtils"
-import "../styles/CourseLogger.css"
+import { useState } from "react";
+import CourseItem from "./CourseItem";
+import BulkImport from "./BulkImport";
+import { parseTimeInput, formatTime, convertToHours } from "../utils/timeUtils";
+import "../styles/CourseLogger.css";
 
-function CourseLogger({ onAddCourse, courses, onDeleteCourse, onEditCourse, totalTimeSpent }) {
-  const [courseName, setCourseName] = useState("")
-  const [timeSpent, setTimeSpent] = useState("")
-  const [category, setCategory] = useState("Uncategorized")
-  const [customCategory, setCustomCategory] = useState("")
-  const [updateHoursCompleted, setUpdateHoursCompleted] = useState(true)
-  const [editMode, setEditMode] = useState(false)
-  const [currentEditId, setCurrentEditId] = useState(null)
-  const [showBulkImport, setShowBulkImport] = useState(false)
-  const [filterCategory, setFilterCategory] = useState("All")
-  const [viewMode, setViewMode] = useState("grid") // "grid" or "list"
+function CourseLogger({
+  onAddCourse,
+  courses,
+  onDeleteCourse,
+  onEditCourse,
+  totalTimeSpent,
+}) {
+  const [courseName, setCourseName] = useState("");
+  const [timeSpent, setTimeSpent] = useState("");
+  const [category, setCategory] = useState("Uncategorized");
+  const [customCategory, setCustomCategory] = useState("");
+  const [updateHoursCompleted, setUpdateHoursCompleted] = useState(true);
+  const [editMode, setEditMode] = useState(false);
+  const [currentEditId, setCurrentEditId] = useState(null);
+  const [showBulkImport, setShowBulkImport] = useState(false);
+  const [filterCategory, setFilterCategory] = useState("All");
+  const [viewMode, setViewMode] = useState("grid"); // "grid" or "list"
 
   // Get unique categories from courses
-  const categories = ["All", ...new Set(courses.map((course) => course.category || "Uncategorized").filter(Boolean))]
+  const categories = [
+    "All",
+    ...new Set(
+      courses
+        .map((course) => course.category || "Uncategorized")
+        .filter(Boolean)
+    ),
+  ];
 
   // Filter courses by category
   const filteredCourses =
-    filterCategory === "All" ? courses : courses.filter((course) => course.category === filterCategory)
+    filterCategory === "All"
+      ? courses
+      : courses.filter((course) => course.category === filterCategory);
 
   // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!courseName.trim() || !timeSpent.trim()) {
-      alert("Please enter both course name and time spent")
-      return
+      alert("Please enter both course name and time spent");
+      return;
     }
 
     try {
-      const parsedTime = parseTimeInput(timeSpent)
-      const timeInHours = convertToHours(parsedTime.hours, parsedTime.minutes)
+      const parsedTime = parseTimeInput(timeSpent);
+      const timeInHours = convertToHours(parsedTime.hours, parsedTime.minutes);
 
-      const finalCategory = category === "Custom" ? customCategory : category
+      const finalCategory = category === "Custom" ? customCategory : category;
 
       if (editMode && currentEditId) {
         // Edit existing course
@@ -51,9 +66,9 @@ function CourseLogger({ onAddCourse, courses, onDeleteCourse, onEditCourse, tota
           minutes: parsedTime.minutes,
           category: finalCategory,
           updateHoursCompleted,
-        })
-        setEditMode(false)
-        setCurrentEditId(null)
+        });
+        setEditMode(false);
+        setCurrentEditId(null);
       } else {
         // Add new course
         onAddCourse({
@@ -65,69 +80,85 @@ function CourseLogger({ onAddCourse, courses, onDeleteCourse, onEditCourse, tota
           minutes: parsedTime.minutes,
           category: finalCategory,
           updateHoursCompleted,
-        })
+        });
       }
 
       // Reset form
-      setCourseName("")
-      setTimeSpent("")
+      setCourseName("");
+      setTimeSpent("");
       if (category === "Custom") {
-        setCategory("Uncategorized")
-        setCustomCategory("")
+        setCategory("Uncategorized");
+        setCustomCategory("");
       }
     } catch (error) {
-      alert('Invalid time format. Please use formats like "5h 30m", "5.5h", or "330m"')
+      alert(
+        'Invalid time format. Please use formats like "5h 30m", "5.5h", or "330m"'
+      );
     }
-  }
+  };
 
   // Start editing a course
   const startEdit = (course) => {
-    setCourseName(course.name)
-    setTimeSpent(course.time)
-    setUpdateHoursCompleted(course.updateHoursCompleted)
+    setCourseName(course.name);
+    setTimeSpent(course.time);
+    setUpdateHoursCompleted(course.updateHoursCompleted);
 
     if (course.category) {
-      if (["Uncategorized", "Simplilearn", "LinkedIn", "Coursera", "Udemy"].includes(course.category)) {
-        setCategory(course.category)
+      if (
+        [
+          "Uncategorized",
+          "Simplilearn",
+          "LinkedIn",
+          "Coursera",
+          "Udemy",
+        ].includes(course.category)
+      ) {
+        setCategory(course.category);
       } else {
-        setCategory("Custom")
-        setCustomCategory(course.category)
+        setCategory("Custom");
+        setCustomCategory(course.category);
       }
     } else {
-      setCategory("Uncategorized")
+      setCategory("Uncategorized");
     }
 
-    setEditMode(true)
-    setCurrentEditId(course.id)
-  }
+    setEditMode(true);
+    setCurrentEditId(course.id);
+  };
 
   // Cancel editing
   const cancelEdit = () => {
-    setCourseName("")
-    setTimeSpent("")
-    setUpdateHoursCompleted(true)
-    setCategory("Uncategorized")
-    setCustomCategory("")
-    setEditMode(false)
-    setCurrentEditId(null)
-  }
+    setCourseName("");
+    setTimeSpent("");
+    setUpdateHoursCompleted(true);
+    setCategory("Uncategorized");
+    setCustomCategory("");
+    setEditMode(false);
+    setCurrentEditId(null);
+  };
 
   // Handle bulk import
   const handleBulkImport = (importedCourses) => {
     // Use a single batch update instead of multiple individual updates
-    onAddCourse(importedCourses)
-    setShowBulkImport(false)
-  }
+    onAddCourse(importedCourses);
+    setShowBulkImport(false);
+  };
 
   return (
     <div className="course-logger">
       <h2>Course Logger</h2>
 
       <div className="logger-actions">
-        <button className={`btn-toggle ${!showBulkImport ? "active" : ""}`} onClick={() => setShowBulkImport(false)}>
+        <button
+          className={`btn-toggle ${!showBulkImport ? "active" : ""}`}
+          onClick={() => setShowBulkImport(false)}
+        >
           Add Single Course
         </button>
-        <button className={`btn-toggle ${showBulkImport ? "active" : ""}`} onClick={() => setShowBulkImport(true)}>
+        <button
+          className={`btn-toggle ${showBulkImport ? "active" : ""}`}
+          onClick={() => setShowBulkImport(true)}
+        >
           Bulk Import
         </button>
       </div>
@@ -161,7 +192,11 @@ function CourseLogger({ onAddCourse, courses, onDeleteCourse, onEditCourse, tota
 
             <div className="input-group">
               <label htmlFor="category">Category:</label>
-              <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+              <select
+                id="category"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option value="Uncategorized">Uncategorized</option>
                 <option value="Simplilearn">Simplilearn</option>
                 <option value="LinkedIn">LinkedIn</option>
@@ -197,13 +232,45 @@ function CourseLogger({ onAddCourse, courses, onDeleteCourse, onEditCourse, tota
               {editMode ? "Update Course" : "Add Course"}
             </button>
             {editMode && (
-              <button type="button" className="btn-secondary" onClick={cancelEdit}>
+              <button
+                type="button"
+                className="btn-secondary"
+                onClick={cancelEdit}
+              >
                 Cancel
               </button>
             )}
           </div>
         </form>
       )}
+
+      <div className="total-time">
+        <p>
+          {filterCategory !== "All"
+            ? `${filterCategory} Total Time: `
+            : "Total Time Spent: "}
+          <span>
+            {formatTime(
+              Math.floor(
+                filteredCourses.reduce(
+                  (total, course) => total + (course.hours || 0),
+                  0
+                ) +
+                  Math.floor(
+                    filteredCourses.reduce(
+                      (total, course) => total + (course.minutes || 0),
+                      0
+                    ) / 60
+                  )
+              ),
+              filteredCourses.reduce(
+                (total, course) => total + (course.minutes || 0),
+                0
+              ) % 60
+            )}
+          </span>
+        </p>
+      </div>
 
       <div className="courses-list">
         <div className="courses-header">
@@ -213,7 +280,11 @@ function CourseLogger({ onAddCourse, courses, onDeleteCourse, onEditCourse, tota
             {courses.length > 0 && (
               <div className="category-filter">
                 <label htmlFor="filter-category">Filter by:</label>
-                <select id="filter-category" value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)}>
+                <select
+                  id="filter-category"
+                  value={filterCategory}
+                  onChange={(e) => setFilterCategory(e.target.value)}
+                >
                   {categories.map((cat) => (
                     <option key={cat} value={cat}>
                       {cat}
@@ -227,35 +298,27 @@ function CourseLogger({ onAddCourse, courses, onDeleteCourse, onEditCourse, tota
 
         {filteredCourses.length === 0 ? (
           <p className="no-courses">
-            {courses.length === 0 ? "No courses logged yet" : "No courses match the selected filter"}
+            {courses.length === 0
+              ? "No courses logged yet"
+              : "No courses match the selected filter"}
           </p>
         ) : (
           <>
             <div className={viewMode === "grid" ? "courses-grid" : ""}>
               {filteredCourses.map((course) => (
-                <CourseItem key={course.id} course={course} onDelete={onDeleteCourse} onEdit={startEdit} />
+                <CourseItem
+                  key={course.id}
+                  course={course}
+                  onDelete={onDeleteCourse}
+                  onEdit={startEdit}
+                />
               ))}
-            </div>
-
-            <div className="total-time">
-              <p>
-                {filterCategory !== "All" ? `${filterCategory} Total Time: ` : "Total Time Spent: "}
-                <span>
-                  {formatTime(
-                    Math.floor(
-                      filteredCourses.reduce((total, course) => total + (course.hours || 0), 0) +
-                        Math.floor(filteredCourses.reduce((total, course) => total + (course.minutes || 0), 0) / 60),
-                    ),
-                    filteredCourses.reduce((total, course) => total + (course.minutes || 0), 0) % 60,
-                  )}
-                </span>
-              </p>
             </div>
           </>
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default CourseLogger
+export default CourseLogger;
