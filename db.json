@@ -1,0 +1,299 @@
+{
+  "timeTrackerData": {
+    "totalHours": 186,
+    "hoursCompleted": 81.55,
+    "hoursRemaining": 104.45,
+    "courses": [
+      {
+        "id": 1745569262749,
+        "name": "Prompt Engineering Application",
+        "time": "5h 38m",
+        "timeInHours": 5.633333333333333,
+        "hours": 5,
+        "minutes": 38,
+        "category": "Simplilearn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569262750,
+        "name": "Blockchain Certification Training",
+        "time": "7h 26m",
+        "timeInHours": 7.433333333333334,
+        "hours": 7,
+        "minutes": 26,
+        "category": "Simplilearn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569262751,
+        "name": "Python for Beginners",
+        "time": "10h 41m",
+        "timeInHours": 10.683333333333334,
+        "hours": 10,
+        "minutes": 41,
+        "category": "Simplilearn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569262752,
+        "name": "Generative AI for Beginners",
+        "time": "3h 27m",
+        "timeInHours": 3.45,
+        "hours": 3,
+        "minutes": 27,
+        "category": "Simplilearn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569262753,
+        "name": "Introduction to Data Science",
+        "time": "12h 18m",
+        "timeInHours": 12.3,
+        "hours": 12,
+        "minutes": 18,
+        "category": "Simplilearn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435202,
+        "name": "Prompt Engineering Application",
+        "time": "5h 37m",
+        "timeInHours": 5.616666666666667,
+        "hours": 5,
+        "minutes": 37,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435203,
+        "name": "AI Productivity Hacks to Reimagine Your Workday and Career",
+        "time": "27m",
+        "timeInHours": 0.45,
+        "hours": 0,
+        "minutes": 27,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435204,
+        "name": "Artificial Intelligence Foundations: Machine Learning",
+        "time": "1h 50m",
+        "timeInHours": 1.8333333333333335,
+        "hours": 1,
+        "minutes": 50,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435205,
+        "name": "Build Your Generative AI Productivity Skills with Microsoft and LinkedIn",
+        "time": "4h 51m",
+        "timeInHours": 4.85,
+        "hours": 4,
+        "minutes": 51,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435206,
+        "name": "Career Essentials in System Administration by Microsoft and LinkedIn",
+        "time": "4h 53m",
+        "timeInHours": 4.883333333333333,
+        "hours": 4,
+        "minutes": 53,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435207,
+        "name": "Copilot in Outlook: Maximize Your Workday Efficiency",
+        "time": "21m",
+        "timeInHours": 0.35,
+        "hours": 0,
+        "minutes": 21,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435208,
+        "name": "Copilot in PowerPoint: From Prompt to Presentation",
+        "time": "45m",
+        "timeInHours": 0.75,
+        "hours": 0,
+        "minutes": 45,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435209,
+        "name": "Copilot in Teams: AI-Powered Collaboration",
+        "time": "21m",
+        "timeInHours": 0.35,
+        "hours": 0,
+        "minutes": 21,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435210,
+        "name": "Copilot in Word: Create and Refine Documents with AI",
+        "time": "27m",
+        "timeInHours": 0.45,
+        "hours": 0,
+        "minutes": 27,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435211,
+        "name": "Ethics in the Age of Generative AI",
+        "time": "39m",
+        "timeInHours": 0.65,
+        "hours": 0,
+        "minutes": 39,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435212,
+        "name": "Generative AI Skills for Creative Content: Opportunities, Issues, and Ethics",
+        "time": "1h 2m",
+        "timeInHours": 1.0333333333333334,
+        "hours": 1,
+        "minutes": 2,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435213,
+        "name": "Introduction to Artificial Intelligence (2023)",
+        "time": "1h 34m",
+        "timeInHours": 1.5666666666666667,
+        "hours": 1,
+        "minutes": 34,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435214,
+        "name": "Introduction to Artificial Intelligence",
+        "time": "2h 26m",
+        "timeInHours": 2.4333333333333336,
+        "hours": 2,
+        "minutes": 26,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435215,
+        "name": "Introduction to Prompt Engineering for Generative AI",
+        "time": "1h 3m",
+        "timeInHours": 1.05,
+        "hours": 1,
+        "minutes": 3,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435216,
+        "name": "Learning Microsoft 365 Copilot and Business Chat",
+        "time": "29m",
+        "timeInHours": 0.48333333333333334,
+        "hours": 0,
+        "minutes": 29,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435217,
+        "name": "The Cybersecurity Threat Landscape",
+        "time": "1h 7m",
+        "timeInHours": 1.1166666666666667,
+        "hours": 1,
+        "minutes": 7,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569435218,
+        "name": "Programming Foundations: Fundamentals",
+        "time": "3h 11m",
+        "timeInHours": 3.183333333333333,
+        "hours": 3,
+        "minutes": 11,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569842119,
+        "name": "Administrative Professional Foundations",
+        "time": "44m",
+        "timeInHours": 0.7333333333333333,
+        "hours": 0,
+        "minutes": 44,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745569867053,
+        "name": "Introduction to Career Skills in Data Analytics",
+        "time": "2h 21m",
+        "timeInHours": 2.35,
+        "hours": 2,
+        "minutes": 21,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745576426934,
+        "name": "Become an AI-Powered People Manager",
+        "time": "54m",
+        "timeInHours": 0.9,
+        "hours": 0,
+        "minutes": 54,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745576483783,
+        "name": "Generative AI for Business Leaders",
+        "time": "57m",
+        "timeInHours": 0.95,
+        "hours": 0,
+        "minutes": 57,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745576525127,
+        "name": "Artificial Intelligence and Application Security",
+        "time": "50m",
+        "timeInHours": 0.8333333333333334,
+        "hours": 0,
+        "minutes": 50,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745576550497,
+        "name": "Learning Data Analytics: 1 Foundations",
+        "time": "3h 29m",
+        "timeInHours": 3.4833333333333334,
+        "hours": 3,
+        "minutes": 29,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      },
+      {
+        "id": 1745577347916,
+        "name": "Artificial Intelligence Foundations: Neural Networks",
+        "time": "1h 45m",
+        "timeInHours": 1.75,
+        "hours": 1,
+        "minutes": 45,
+        "category": "LinkedIn",
+        "updateHoursCompleted": true
+      }
+    ]
+  }
+}
